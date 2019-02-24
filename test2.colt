@@ -1,0 +1,50 @@
+? Test 2 by Colton Anderson
+
+def object obj1 as
+	def int1;
+	def string1;
+	def arr1[3];
+end
+
+? this is a comment
+? idk if I need this functionality below
+? def obj1 o;
+
+?? this is
+a multi line comment ??
+def function func1(a, b, c) as
+	obj1.int1 =  a;
+	obj1.string1 = b;
+	obj1.arr1[] = c;
+	
+	if obj1.int1 == obj1.arr1[0] then 
+		obj1.int1 = 2;
+	end
+
+	if obj1.string1 == "hello" then
+		obj1.string1 = "goodbye";
+	else if obj1.string1 == "hey" then
+		obj1.string1 = "what's up?";
+	else
+		obj1.string1 = "yo;
+	end
+
+	def i;
+	for i = 0:1:200 do
+		++obj1.arr1[i];
+	end
+
+	def j = 5;
+	while j >= 1 do
+		? do i need to add this or idk
+		print("hello");
+		++j;
+	end
+end
+
+def function main(args[i], argc) as 
+	def x = 1;
+	def y = "hi";
+	def z[] = (1, 2, 3);
+	obj1.func1(x, y, z);
+end

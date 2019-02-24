@@ -1,0 +1,68 @@
+? Test 1 by Colton Anderson
+def function f1(a, b) as
+	o.a(i,i)
+	a(i) = 1
+	func(i+1, i)
+	def a = i(a, b)
+	a.x.y = 1
+
+	def a = array(10)
+	b = a.get(1)
+	a.set(1) = 20
+
+	a = -1
+	if !a then
+		print(a)
+	end
+
+	y = (function(x) as return(x + x) end)(5)
+end
+
+def object obj1 as
+	def int1
+	def string1
+end
+def object class1 as
+	def in
+	def function class1(input) as
+		in = input
+	end
+	def function func1(a, b, c) as
+		obj1.int1 =  a
+		obj1.string1 = b	
+		if obj1.int1 == obj1.arr1.get(i) && obj1.int1 != obj1.arr1.get(i) then 
+			obj1.int1 = 2
+		end
+		if obj1.string1 == "hello" && obj1 == "sup" then
+			obj1.string1 = "goodbye"
+		else if obj1.string1 == "hey" then
+			obj1.string1 = "what's up?"
+		else
+			obj1.string1 = "yo"
+		end
+		def i
+		def j = 5
+		while j != 1 do
+			println("hello", 1)
+			--j
+		end
+		return(obj1 + 1)
+	end
+end
+def object class2 as
+	def in1
+	def in2
+	def function class2(input, input2) as
+		in1 = input
+		in2 = input2
+		def function func1(a, b, c) as
+			a = 1
+			b = 2
+			c = 3
+		end
+	end
+end
+def function main() as 
+	println("Hello world")
+end
+

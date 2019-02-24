@@ -1,0 +1,114 @@
+??
+dpl - grammar
+Colton Anderson
+Prof: John C. Lusth
+Class: CS403
+Date: 9/18
+??
+
+program : def
+		| def program
+
+def : varDef
+	| funcDef
+	| object
+	| libraryDef
+
+statements : statement
+		   | statement statements
+
+statement : VARAIBLE ASSIGN expr SEMICOLON
+		  | ifStatement
+		  | forLoop
+		  | whileLoop
+		  | def
+		  | expr SEMICOLON
+
+unary : VARIABLE
+	  | INTEGER
+	  | REAL						
+	  | STRING														
+	  | OPAREN expr CPAREN												
+	  | VARIABLE OPAREN optExprList CPAREN				
+	  | PLUSPLUS VARIABLE 													
+	  | MINUSMINUS VARIABLE
+	  | BANG VARIABLE
+	  | TIMES VARIABLE
+	  | AMPERSAND VARIABLE													
+	  | VARIABLE OBRACKET optExprList CBRACKET							
+
+expr : unary 
+	 | unary operator expr
+
+operator : ASSIGN
+		 | PLUS
+		 | TIMES
+		 | MINUS
+		 | DIVIDE
+		 | MODULUS
+		 | GREATERTHAN 
+		 | GREATERTHANOREQUALTO 						
+		 | LESSTHAN	
+		 | LESSTHANOREQUALTO 						
+		 | EQUALSEQUALS
+		 | PLUSEQUALS
+		 | MINUSEQUALS
+		 | NOTEQUAL 										
+		 | DOT
+		 | PLUSPLUS
+		 | MINUSMINUS
+		 | NOT
+		 | COLON
+		 | AND
+		 | OR
+		 | AMPERSAND
+		 | BAR
+
+list : unary 															
+  	 | unary COMMA list
+
+optList : list
+		| EMPTY	
+
+exprList : expr 														
+		 | expr COMMA exprList
+
+optExprList : exprList
+			| EMPTY
+
+varList : VARIABLE
+		| VARIABLE COMMA varList
+
+optExprList : varList
+			| EMPTY
+
+ifStatement : IF expr ifBlock 	
+
+ifBlock : END
+		| THEN statements ifBlock
+		| THEN statements ELSE ifStatement
+		| THEN statements ELSE statements END
+
+loopBlock : DO statements END
+	
+forLoop : FOR expr COLON expr loopBlock 								
+		| FOR expr COLON expr COLON expr loopBlock						
+
+whileLoop : WHILE expr loopBlock										
+
+varDef : DEFINE VARIABLE ASSIGN expr SEMICOLON	
+	   | DEFINE VARIABLE SEMICOLON										
+	   | DEFINE VARIABLE OBRACKET INTEGER CBRACKET						
+	   | DEFINE VARIABLE OBRACKET CBRACKET ASSIGN OPAREN list 			
+
+libraryDef : DEFINE QUOTE STRING QUOTE
+
+object : DEFINE OBJECT VARIABLE objBlock							
+
+objBlock : AS statements END
+		 | VARIABLE SEMI
+
+funcBlock : AS statements END 											
+		  | SEMI
+
+funcDef : DEFINE FUNCTION VARIABLE OPAREN optExrList CPAREN funcBlock 	

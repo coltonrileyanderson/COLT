@@ -1,0 +1,132 @@
+def object foo as
+    def a = void
+
+    def function foo(u) as 
+        a = u
+    end
+
+    def function getval() as
+        a
+    end
+
+    def function setval(val) as
+        def temp = a
+        a = val
+        temp
+    end
+end
+
+def function test(n) as
+    def function inside(m) as
+        n+m
+    end
+    inside(n)
+end
+
+def function f(x) as
+    (function (y) as x + y end)
+end
+
+def function return(x) as x end
+
+def function whiletest(i) as
+    def temp = i
+    while temp < 10 do
+        println("temp: ", temp)
+        ++temp
+        
+        if temp == 5 then
+            temp = 10
+            return(5)
+        end 
+    end
+    
+end
+
+def function main() as
+
+    def alen = cmdc()
+    println(alen)
+    println(cmd(0)," ", cmd(1)," ",cmd(2))
+    
+    def fp = open(cmd(2))
+    def int = readint(fp)
+    println(int)
+    def sum = int
+    
+    while atend(fp) != 1 do
+        int = readint(fp)
+        sum += int
+        println(int)
+    end
+
+    def mod = 10 % 3
+    println(mod)
+    
+    println("sum: ", sum)
+    def tvoid = void
+    println("tvoid: ", tvoid)
+    tvoid = "string"
+    println("tvoid: ", tvoid)
+    tvoid = 1
+    println("tvoid: ", tvoid)
+    println()
+    tvoid = 1.0
+    println("tvoid: ", tvoid)
+    def arr = array(3)
+    set(arr, 0, "hi")
+    set(arr, 1, "hi")
+    set(arr, 2, "whats up")
+
+    def i = 0
+    def rtn = void
+    while i < len(arr) do
+        rtn = get(arr, i)
+        println(rtn)
+        ++i
+    end
+
+    
+    def x = foo(10)
+    def y = x.getval()
+    y += 10
+    x.setval(y)
+    println(x.getval())
+    ??
+    def a = 1
+    def b = 1
+    def c = 1
+    if a == 2 then
+        println("HI")
+        println("WHATS UP")
+    else if b == 2 then
+        println("HEY")
+        println("WHATS UP")
+    else if c == 2 then
+        println("HELLO")
+        println("WHATS UP")
+    else    
+        println("YO")
+        println("WHATS UP")
+    end
+
+    def temp = whiletest(0)
+    println("temp: ", temp)
+
+    def a = f(3)
+    def b = f(11)
+    
+    println("a(5) is ",a(5))      ? should be 8
+    println("b(6) is ",b(6))      ? should be 17
+    println("a(10) is ",a(10))    ? should be 13
+
+    def t = test(1)
+
+    def v = void
+    println(v)
+    v = "Hi"
+    println(v)
+    println("t(2) is ", test(2))
+    ??
+end
+

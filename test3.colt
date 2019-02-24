@@ -1,0 +1,62 @@
+? Test 3 by Colton Anderson
+
+def object obj1 as
+	def int1;
+	def string1;
+	def arr1[3];
+end
+
+? this is a comment
+? def obj1 o;
+
+?? this is
+a multi line comment ??
+
+def object class1 as
+	
+	def in;
+
+	def function class1(input) as
+		in = input;
+	end
+
+	def function func1(a b c) as
+		obj1.int1 =  a;
+		obj1.string1 = b;
+		obj1.arr1[] = c;
+		
+		if obj1.int1 == obj1.arr1[0] && obj1.int1 != obj1.arr1[1] then 
+			obj1.int1 = 2;
+		end
+
+		if obj1.string1 == "hello" then
+			obj1.string1 = "goodbye";
+		else if obj1.string1 == "hey" then
+			obj1.string1 = "what's up?";
+		else
+			obj1.string1 = "yo";
+		end
+
+		def i;
+		for i = 0:1:200 do
+			++obj1.arr1[i];
+			obj1.arr1[i] = 1;
+		end
+
+		def j = 5;
+		while j != 1 do
+			print("hello", 1);
+			--j;
+		end
+	end
+
+	def function main(args[], argc) as 
+		def x = 1;
+		def y = "hi";
+		def z[] = (1, 2, 3);
+		obj1.func1(x, y, z);
+	end
+
+end
+
+
