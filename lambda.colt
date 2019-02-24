@@ -1,0 +1,16 @@
+??---------------------------------------------------
+-- lambda.colt tests lambda functionality
+---------------------------------------------------??
+
+def function f(x) as
+    (function (y) as x + y end)
+end
+
+def function main() as
+	def a = f(3)
+	def b = f(11)
+		
+	println("a(5) is ",a(5), " should be 8")
+	println("b(6) is ",b(6), " should be 17")
+	println("a(10) is ",a(10), " should be 13")
+end

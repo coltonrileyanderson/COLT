@@ -1,0 +1,14 @@
+??---------------------------------------------------
+-- functions.colt tests functions functionality
+---------------------------------------------------??
+
+def function test(n) as
+    def function inside(m) as
+        n+m
+    end
+    inside(n)
+end
+
+def function main() as
+	println("test(2) should be 4, test(2) = ",test(2))
+end

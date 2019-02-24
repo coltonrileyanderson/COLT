@@ -51,6 +51,7 @@ char *ATEND = "atend";
 //keywords - print
 char *PRINT = "print";
 char *PRINTLN = "println";
+char *STRLEN = "strlen";
 
 //keyword command lines
 char *CMDC = "cmdc";

@@ -52,6 +52,7 @@ extern char *ATEND;
 //keywords - print
 extern char *PRINT;
 extern char *PRINTLN;
+extern char *STRLEN;
 
 //keyword - command lines
 extern char *CMD;

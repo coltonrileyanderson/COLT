@@ -566,7 +566,7 @@ int builtinPending(Lexeme *v) {
 		getLexemeVarName(v) == PRINT || getLexemeVarName(v) == PRINTLN || 
 		getLexemeVarName(v) == CMD || getLexemeVarName(v) == CMDC ||
 		getLexemeVarName(v) == ARRAY ||getLexemeVarName(v) == GET || 
-		getLexemeVarName(v) == SET || getLexemeVarName(v) == LEN)
+		getLexemeVarName(v) == SET || getLexemeVarName(v) == LEN || getLexemeVarName(v) == STRLEN)
 	{
 		return 1;
 	}

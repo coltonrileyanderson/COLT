@@ -95,41 +95,6 @@ skipWhiteSpace(FILE *fp)
 
     }
 
-void
-skipCommentSpace(FILE *fp) 
-{
-	char ch;
-	char ch1;
-
-	ch = fgetc(fp);
-
-	if (ch == '*') {
-		ch = fgetc(fp);
-		while (ch != EOF && (ch != '*' && ch1 != '?')){
-
-			if(ch == '\n') {
-    			lineNum++;
-    		}
-			if (isspace(ch)) {
-				continue;
-			}
-
-			ch = fgetc(fp);
-			if (ch == '*') {
-				ch1 = fgetc(fp);
-			}
-			
-		}
-	}
-	else {
-		while (ch != '\n') {
-
-		}
-	}
-	
-	skipWhiteSpace(fp);
-}
-
 Lexeme *
 lex(Lexer *l)
 {
@@ -297,35 +262,11 @@ lexVarOrKeyWord(FILE *fp)
 		return newLexeme(ELSE, "ELSE", lineNum);
 	else if (!strcmp(buffer, THEN)) 
 		return newLexeme(THEN, "THEN", lineNum);
-/*	else if (!strcmp(buffer, FOR)) 
-		return newLexeme(FOR, "FOR", lineNum);
-*/	else if (!strcmp(buffer, DO)) 
+	else if (!strcmp(buffer, DO)) 
 		return newLexeme(DO, "DO", lineNum);
 	else if (!strcmp(buffer, WHILE)) 
 		return newLexeme(WHILE, "WHILE", lineNum);
-/*	else if (!strcmp(buffer, RETURN)) 
-		return newLexeme(RETURN, "RETURN", lineNum);
-	else if (!strcmp(buffer, OPEN)) 
-		return newLexeme(OPEN, "OPEN", lineNum);
-	else if (!strcmp(buffer, CLOSE)) 
-		return newLexeme(CLOSE, "CLOSE", lineNum);
-	else if (!strcmp(buffer, READ)) 
-		return newLexeme(READ, "READ", lineNum);
-	else if (!strcmp(buffer, PRINT)) 
-		return newLexeme(PRINT, "PRINT", lineNum);
-	else if (!strcmp(buffer, PRINTLN)) 
-		return newLexeme(PRINTLN, "PRINTLN", lineNum);
-	else if (!strcmp(buffer, CMD)) 
-		return newLexeme(CMD, "CMD", lineNum);
-	else if (!strcmp(buffer, ARR)) 
-		return newLexeme(ARR, "ARR", lineNum);
-	else if (!strcmp(buffer, GET)) 
-		return newLexeme(GET, "GET", lineNum);
-	else if (!strcmp(buffer, SET)) 
-		return newLexeme(SET, "SET", lineNum);
-	else if (!strcmp(buffer, LEN)) 
-		return newLexeme(LEN, "LEN", lineNum);
-*/	else if (!strcmp(buffer, VOID)) 
+	else if (!strcmp(buffer, VOID)) 
 		return newLexeme(VOID, "VOID", lineNum);
 	else 
 		return newVarLexeme(VARIABLE, lineNum, buffer);

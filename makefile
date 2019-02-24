@@ -126,21 +126,21 @@ recursion : eval
 recursionx : eval
 	./colt recursion.colt
 
-#TODO:
-iteration : eval
 
+iteration : eval
+	cat iteration.colt
 iterationx : eval
 	./colt iteration.colt
 
-#TODO:
-functions : eval
 
+functions : eval
+	cat functions.colt
 functionsx : eval
 	./colt functions.colt
 
-#TODO:
-lambda : eval
 
+lambda : eval
+	cat lambda.colt
 lambdax : eval
 	./colt lambda.colt
 
@@ -152,7 +152,7 @@ objectsx : eval
 
 #TODO:
 problem : eval
-
+	cat problem.colt
 problemx : eval
 	./colt problem.colt
 

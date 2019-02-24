@@ -32,7 +32,7 @@ extern Lexeme *evalAtend(Lexeme *);
 
 extern Lexeme *evalPrint(Lexeme *); 
 extern Lexeme *evalPrintln(Lexeme *); 
-
+extern Lexeme *evalStrLen(Lexeme *args);
 extern Lexeme *evalCmdc(Lexeme *);
 extern Lexeme *evalCmd(Lexeme *); 
 

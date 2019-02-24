@@ -1,0 +1,13 @@
+??---------------------------------------------------
+-- iteration.colt tests iteration functionality
+---------------------------------------------------??
+
+def function main () as
+	def temp = 0
+	println("temp (before iteration): ", temp)
+	while temp < 10 do
+		println("temp: ", temp)
+		++temp
+	end
+	println("temp (after iteration): ", temp)
+end

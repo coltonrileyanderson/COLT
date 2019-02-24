@@ -77,6 +77,11 @@ void insertFunctions(Lexeme *env) {
 	Lexeme *printlnB = newLexeme(BUILTIN, "BUILTIN", 0);
 	setfval(printlnB, evalPrintln);
 	insert(println, printlnB, env);
+    //strlen
+	Lexeme *strlen = newVarLexeme(VARIABLE, 0, STRLEN);
+	Lexeme *strlenB = newLexeme(BUILTIN, "BUILTIN", 0);
+	setfval(strlenB, evalStrLen);
+	insert(strlen, strlenB, env);
 	//cmdc
 	Lexeme *cmdc = newVarLexeme(VARIABLE, 0, CMDC);
 	Lexeme *cmdcB = newLexeme(BUILTIN, "BUILTIN", 0);
@@ -321,6 +326,17 @@ Lexeme *evalPrintln(Lexeme *args) {
     }
     printf("\n");
     return 0;
+}
+
+Lexeme *evalStrLen(Lexeme *args) {
+    if (args != 0) {
+        if (getLexemeType(car(args)) == STRING) {
+            char *str = getLexemeString(car(args));
+            int len = strlen(str);
+            return newIntegerLexeme(INTEGER, 0, len);
+        }
+    }
+    return NULL;
 }
 
 //cmdc() return integer lexeme with the arg count
