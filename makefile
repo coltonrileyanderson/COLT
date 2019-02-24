@@ -144,9 +144,9 @@ lambda : eval
 lambdax : eval
 	./colt lambda.colt
 
-#TODO:
-objects : eval
 
+objects : eval
+	cat objects.colt
 objectsx : eval
 	./colt objects.colt
 

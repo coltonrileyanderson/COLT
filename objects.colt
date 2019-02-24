@@ -1,0 +1,25 @@
+def object foo as
+    def a = void
+
+    def function foo(u) as 
+        a = u
+    end
+
+    def function getval() as
+        a
+    end
+
+    def function setval(val) as
+        def temp = a
+        a = val
+        temp
+    end
+end
+
+def function main() as
+	def x = foo(10)
+	def y = x.getval()
+	y += 10
+	x.setval(y)
+	println(x.getval())
+end
