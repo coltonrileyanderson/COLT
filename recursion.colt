@@ -1,0 +1,18 @@
+??---------------------------------------------------
+-- recursion.colt tests recursion functionality
+---------------------------------------------------??
+
+def function fact(a) as
+	def n = a
+	def rtn = void
+	if n <= 1 then
+		rtn = 1
+	else
+		rtn = n * fact(n-1)
+	end
+end
+
+def function main () as
+	def temp = fact(5)
+	println("fact(5): ", temp)
+end

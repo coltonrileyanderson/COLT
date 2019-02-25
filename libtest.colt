@@ -1,0 +1,9 @@
+def "library.colt"
+
+def function main() as
+	def x = foo(10)
+	def y = x.getval()
+	y += 10
+	x.setval(y)
+	println("The original x.a is void, then init to 10, then set to 20: x.getval() = ", x.getval())
+end

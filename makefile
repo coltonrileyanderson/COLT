@@ -80,49 +80,48 @@ eval.o : eval.c eval.h
 
 #TODO:
 error1 : eval
-
+	cat error1.colt
 error1x : eval
 	./colt error1.colt
 
 #TODO:
 error2 : eval
-
+	cat error2.colt
 error2x : eval
 	./colt error2.colt
 
 #TODO:
 error3 : eval
-
+	cat error3.colt
 error3x : eval
 	./colt error3.colt
 
 #TODO:
 error4 : eval
-
+	cat error4.colt
 error4x : eval
 	./colt error4.colt
 
 #TODO:
 error5 : eval
-
+	cat error5.colt
 error5x : eval
 	./colt error5.colt
 
-#TODO:
-arrays : eval
 
+arrays : eval
+	cat arrays.colt
 arraysx : eval
 	./colt arrays.colt
 
-#TODO:
-conditionals : eval
 
+conditionals : eval
+	cat conditionals.colt
 conditionalsx : eval
 	./colt conditionals.colt
 
-#TODO:
 recursion : eval
-
+	cat recursion.colt
 recursionx : eval
 	./colt recursion.colt
 

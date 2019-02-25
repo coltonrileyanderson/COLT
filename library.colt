@@ -1,0 +1,20 @@
+??---------------------------------------------------
+-- library.colt tests library functionality paired with libtest.colt
+---------------------------------------------------??
+def object foo as
+    def a = void
+
+    def function foo(u) as 
+        a = u
+    end
+
+    def function getval() as
+        a
+    end
+
+    def function setval(val) as
+        def temp = a
+        a = val
+        temp
+    end
+end

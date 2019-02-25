@@ -669,7 +669,7 @@ Lexeme *evalPlus(Lexeme *tree, Lexeme *env) {
 Lexeme *evalTimes(Lexeme *tree, Lexeme *env) {
     Lexeme *left = eval(car(tree), env);
     Lexeme *right = eval(cdr(tree), env);
-
+    
     //left and right exist
     if(left != 0 && right != 0) {
         if (getLexemeType(left) == INTEGER && getLexemeType(right) == INTEGER){

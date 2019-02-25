@@ -1,0 +1,42 @@
+??---------------------------------------------------
+-- conditionals.colt tests conditionals functionality
+---------------------------------------------------??
+
+def function cond(a, b, c) as 
+	if a < b then
+		println("a < b")
+	else if (b < c) then 			?parenthesis optional
+		println("b < c")
+	else 
+		println("else")
+	end
+end
+
+def function main() as
+	def a = 3
+	def b = 5
+	def c = 4
+	
+	println("testing: if a < b ---> a = 3, b = 5, c = 4")
+	println("------------------------------------------")
+	cond(a, b, c)
+	println()
+
+	a = 4
+	b = 4
+	c = 5
+
+	println("testing: else if b < c ---> a = 4, b = 4, c = 5")
+	println("-----------------------------------------------")
+	cond(a, b, c)	
+	println()
+
+	a = 5
+	b = 5
+	c = 5
+
+	println("testing: else ---> a = 5, b = 5, c = 5")
+	println("--------------------------------------")
+	cond(a, b, c)
+	println()
+end

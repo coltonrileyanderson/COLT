@@ -1,0 +1,19 @@
+def function main() as
+	println("init arr of size 3") println()
+	def arr = array(3)
+
+	println("set arr[0] = hi, arr[1] = hello, arr[2] = whats up") println()
+	set(arr, 0, "hi")
+	set(arr, 1, "hello")
+	set(arr, 2, "whats up")
+	
+	println("looping through arr to print each entry")
+	println("---------------------------------------")
+	def i = 0
+	def rtn = void
+	while i < len(arr) do
+		rtn = get(arr, i)
+		println(rtn)
+		++i
+	end
+end
