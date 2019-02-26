@@ -13,4 +13,8 @@ def function main() as
 	println("a(5) is ",a(5), " should be 8")
 	println("b(6) is ",b(6), " should be 17")
 	println("a(10) is ",a(10), " should be 13")
+
+	def l = (function(x) as x + x end)
+	println("l(5) is, ", l(5), " should be 10")
+
 end

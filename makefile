@@ -78,31 +78,31 @@ eval.o : eval.c eval.h
 # commands #
 ############
 
-#TODO:
+
 error1 : eval
 	cat error1.colt
 error1x : eval
 	./colt error1.colt
 
-#TODO:
+
 error2 : eval
 	cat error2.colt
 error2x : eval
 	./colt error2.colt
 
-#TODO:
+
 error3 : eval
 	cat error3.colt
 error3x : eval
 	./colt error3.colt
 
-#TODO:
+
 error4 : eval
 	cat error4.colt
 error4x : eval
 	./colt error4.colt
 
-#TODO:
+
 error5 : eval
 	cat error5.colt
 error5x : eval
@@ -149,7 +149,7 @@ objects : eval
 objectsx : eval
 	./colt objects.colt
 
-#TODO:
+
 problem : eval
 	cat problem.colt
 problemx : eval
