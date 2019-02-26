@@ -38,7 +38,7 @@ Object definition:
 def object obj as
 	? obj vars
 	def function obj(params) as
-		? obj constructor
+		? obj constructor -- optional
 	end
 
 	? obj functions
@@ -46,6 +46,12 @@ end
 
 Conditionals:
 -------------
+<cond> is a comparsion:
+	a < b, a > b
+	a <= b, a >= b
+	a != b, a == b
+	a && b, a || b
+
 if <cond> then
 	? consequents
 end
@@ -74,6 +80,14 @@ Iteration:
 ----------
 (below loops from 0 to 10)
 def temp = 0
+
+general: 
+while <cond> do 
+	?statements
+end
+
+<cond> is same as Conditionals
+
 while temp < 10 do
 	? statements
 	++temp ? need to iterate, or infinite loop
@@ -107,5 +121,3 @@ len(a)
 librarys:
 ---------
 define "library.colt"
-
-
