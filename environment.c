@@ -49,7 +49,7 @@ Lexeme *lookup(Lexeme *var, Lexeme *env)
 		env = cdr(env);
 	}
 
-	FatalNoExit("Variable: %s is undefined", getLexemeVarName(var));
+	FatalNoExit("Variable: %s is undefined \n", getLexemeVarName(var));
 	return 0;
 }
 
@@ -71,7 +71,7 @@ Lexeme *update(Lexeme *var, Lexeme *new, Lexeme *env) {
 		env = cdr(env);
 	}
 
-	FatalNoExit("Variable: %s is undefined", getLexemeVarName(var));
+	FatalNoExit("Variable: %s is undefined \n", getLexemeVarName(var));
 	return 0;
 }
 
@@ -84,7 +84,7 @@ Lexeme *extend(Lexeme *vars, Lexeme *vals, Lexeme *env)
 void displayEnv(Lexeme *env, FILE *fp)
 {
 	if (env != 0) {
-		fprintf(fp, "The environment is:\n");
+		fprintf(fp, "The environment is: \n");
 		Lexeme *table; Lexeme *vars; Lexeme *vals;
 
 		while (env != 0) {
@@ -103,7 +103,7 @@ void displayEnv(Lexeme *env, FILE *fp)
 		}
 	}
 	else {
-		FatalNoExit("The environemt doesn't exist");
+		FatalNoExit("The environemt doesn't exist\n");
 	}
 	return;
 }
@@ -127,7 +127,7 @@ void displayLocal(Lexeme *env, FILE *fp)
 		}
 	}
 	else {
-		FatalNoExit("The environemt doesn't exist");
+		FatalNoExit("The environemt doesn't exist\n");
 	}
 	return;
 }
@@ -142,5 +142,5 @@ FatalNoExit(char *fmt, ...)
     vfprintf(stderr, fmt, ap);
     va_end(ap);
 
-    //exit(-1);
+    exit(1);
 }

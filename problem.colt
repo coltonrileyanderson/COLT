@@ -1,0 +1,14 @@
+def function main() as
+	def alen = cmdc()
+	
+	def fp = open(cmd(2))
+	def int = readint(fp)
+	def sum = int
+	
+	while atend(fp) != 1 do
+		int = readint(fp)
+		sum += int
+	end
+
+	println("sum: ", sum)
+end

@@ -1,0 +1,17 @@
+??---------------------------------------------------
+-- error3.colt tests error3 functionality
+---------------------------------------------------??
+
+def function main() as
+	def str = "str"
+	def int = 1
+
+	println("testing if an int < str should result in a syntax error")
+	if int < str then
+		println("true")
+	else
+		println("false")
+	end
+
+
+end

@@ -17,8 +17,9 @@ def object foo as
 end
 
 def function test(n) as
+    def tempn = 10
     def function inside(m) as
-        n+m
+        tempn+m
     end
     inside(n)
 end

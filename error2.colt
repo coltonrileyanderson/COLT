@@ -1,0 +1,12 @@
+??---------------------------------------------------
+-- error2.colt tests error2 functionality
+---------------------------------------------------??
+
+def function foo(a) as a += 10 end
+
+def function main() as
+	println("attempting to call function foo improperly results in no value printed: when it should print:  foo(val), print val + 10")
+	def foo(10)
+	println(foo)
+
+end

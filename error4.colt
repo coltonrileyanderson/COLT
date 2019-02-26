@@ -1,0 +1,11 @@
+
+??---------------------------------------------------
+-- error4.colt tests error4 functionality
+---------------------------------------------------??
+def function main () as
+	def a = 10
+	def b = "10"
+
+	println("Attempting to add a = 10 and b = '10' together...")
+	def rtn = a + b
+end

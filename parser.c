@@ -37,7 +37,7 @@ legal() {
 void
 illegal() {
 	fprintf(stdout, "illegal\n");
-	exit(0);
+	exit(1);
 }
 
 
@@ -659,11 +659,10 @@ Fatal(char *fmt, ...)
 {
     va_list ap;
 
-    fprintf(stderr,"ERROR: ");
-
     va_start(ap, fmt);
     vfprintf(stderr, fmt, ap);
     va_end(ap);
 
-    exit(-1);
+	fprintf(stderr, "\n");
+    exit(1);
 }

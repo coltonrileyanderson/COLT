@@ -1,0 +1,14 @@
+??---------------------------------------------------
+-- error1.colt tests error1 functionality
+---------------------------------------------------??
+
+def function main() as
+	def n = 2
+	println("n = 2")
+	println("checking if n = 1, but syntax is n == 1 not n = 1, so the wrong if statement is picked")
+	if n = 1 then
+		println("n = 1 condition true")
+	else 
+		println("else condition true")
+	end
+end

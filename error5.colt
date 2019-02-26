@@ -1,0 +1,14 @@
+??---------------------------------------------------
+-- error5.colt tests error5 functionality,
+-- specifically testing improper function use
+---------------------------------------------------??
+
+def object test as
+	def val = void
+	def function test(v) as val = v end
+end
+def function main() as
+	println("Attempting to access the value val inside the object test without initializing it")
+	def t = test
+	println(t.val)
+end

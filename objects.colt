@@ -3,6 +3,20 @@
 ---------------------------------------------------??
 
 def object foo as
+    def object bar as
+        def b = void 
+        
+        def function bar(bval) as 
+            b = bval
+        end
+
+        def function setval(val) as
+            def temp = b
+            b = val
+            temp
+        end
+    end
+
     def a = void
 
     def function foo(u) as 
@@ -24,6 +38,26 @@ def function main() as
 	def x = foo(10)
 	def y = x.getval()
 	y += 10
-	x.setval(y)
-	println("The original x.a is void, then init to 10, then set to 20: x.getval() = ", x.getval())
+    x.setval(y)
+
+    println("Testing object value retrieval and initializations...")
+    println("The original x.a is void, then init to 10, then set to 20 using x.setval(y): x.a using x.getval() is -> ", x.getval()) 
+
+	x.a = x.a + 10
+    println("The original x.a is void, then init to 10, then set to 30 using x.a: x.a using x.getval() is -> ", x.getval()) 
+
+    x.a = x.a + 10
+    println("The original x.a is void, then init to 10, then set to 40 using x.a: x.a using x.a to get val is -> ", x.a) 
+
+    println("This demonstrats that an object's objects or variables can be access from outside its environment using either . operators or get/set functions") 
+
+    println()
+    println("Testing an object within an object...")
+    def f = foo(10)
+    def test = f.bar(20)
+    
+    println("The object foo (f) has a val (f.a should be 10): f.a = ", f.a) println("The object bar (test) within foo (f) has b val (test.b should be 20): test.b = ", test.b)
+    test.setval(30)
+    println("Calling test.setval(30) should set test's value b to to 30: test.b = ",test.b)
+
 end
